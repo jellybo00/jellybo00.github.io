@@ -1,0 +1,197 @@
+// 공통
+.sec_ttl_box {
+    text-align: center;
+    margin-bottom: rem(60px);
+
+    .line {
+        display: block;
+        background: $c-pt;
+        width: rem(80px); height: rem(5px);
+    }
+
+    .sec_ttl {
+        font-size: rem(22px);
+        font-family: 'Agraham';
+        text-transform: uppercase;
+        letter-spacing: 0;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% + rem(40px));
+            height: 100%;
+            background:$c-pt;
+            opacity: 0.6;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+            z-index: -1;
+        }
+    }
+
+}
+
+
+
+
+
+// visual_sec
+.visual_sec  {
+    background: #272727;
+    color: $c-w;
+
+    .inner_1300 {
+        @include flexVal (flex, center , center);
+        height: 100%
+    }
+
+    .ttl {
+        font-size: rem(60px);
+    
+        strong {
+            font-family: 'Agraham';
+            color: $c-pt;
+            line-height: 2;
+            display: inline-block;
+            margin: 0 rem(35px);
+            letter-spacing: 0;
+            padding: 0 rem(10px) 0 rem(20px);
+            position: relative;
+            width: rem(430px);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(12, end);
+            -webkit-animation:typing 2s steps(12, end);
+
+            &::after {
+                content: '';
+                width: 2px;
+                height: 75%;
+                background: #fff;
+                position: absolute;
+                top:5%;
+                right: 0;
+                animation: blink-caret .5s step-end infinite alternate;
+                -webkit-animation:blink-caret .5s step-end infinite alternate;
+            }
+            &::before {
+                content: '';
+                display: block;
+                width: calc(100% + rem(10px));
+                height: 3px;
+                background: #fff;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+
+        }
+    }
+}
+
+// @-webkit-keyframes typing { from { width: 0; } }
+// @-webkit-keyframes blink-caret {  50% { background: transparent; }}
+@keyframes typing { from { width: 0; } }
+@keyframes blink-caret {50% { background: transparent; }}
+
+.about_sec {
+    padding-top:rem(30px);
+    .my_img {
+        margin-right: rem(80px);
+        flex: 0 0 auto;
+
+        figure {
+            max-width: rem(350px);
+            border-radius: rem(200px) rem(200px)  0 0;
+            overflow: hidden;
+            padding: rem(25px);
+            box-sizing: border-box;
+            border: 2px solid $c-pt;
+        }
+    }
+
+    .profile {
+        margin-top: rem(30px);
+        dl {
+            @include flexVal (flex, flex-start ,center);
+            line-height : 1.6
+        }
+        dt {
+            font-size: rem(20px);
+            font-weight: 500;
+        }
+        dd {
+            position: relative;
+            padding-left:  rem(10px);
+            margin-left: rem(10px);
+            font-size:  rem(18px);
+
+            &::after {
+                content: '';
+                display: block;
+                width: 1px;
+                height:  rem(14px);
+                background: $l-db;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform:translateY(-50%) ;
+            }
+        }
+    }
+
+    .my_area {
+        font-size:rem(20px);
+        line-height: 1.5;
+        margin-bottom: rem(40px); 
+    }
+    .my_info_box {
+        .label {
+            display: block;
+            color:$c-pt;
+            font-size: rem(20px);
+            margin-bottom: rem(15px);
+            text-transform: uppercase;
+        }
+        .detail {
+            p+ p {
+                margin-top: rem(20px);
+            }
+            .date {
+                display: block;
+                margin-bottom: rem(10px);
+                color: $c-gr75;
+            }
+            b {
+                font-size: rem(20px);
+                margin-right: rem(8px);
+            }
+            span {
+                font-size: rem(18px);
+                color: $c-bk45;
+            }
+        }
+        .hashtag_box {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            
+            .tag {
+                display: block;
+                padding:rem(8px) rem(20px);
+                background:#f9f9f9;
+                border-radius: rem(50px);
+                font-size: rem(16px);
+            }
+        }
+    }
+}
+
+

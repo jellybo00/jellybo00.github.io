@@ -1,0 +1,168 @@
+html {
+    @extend  %basic-txt
+}
+
+#wrap {
+    position: relative;
+}
+
+
+// only web/mo 
+.only {
+    &-web {
+        display: block !important;
+    }
+    &-web-flex {
+        display: flex !important;
+    }
+    &-web-inblock {
+        display: inline-block !important;
+    }
+
+
+    &-mo {
+        display: none !important;
+    }
+    &-mo-flex{
+        display: none !important;
+    }
+    &-mo-inblock {
+        display: inline-block !important;
+    }
+}
+// ========================= only web/mo //
+
+
+[class^="inner"] {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1600px;
+    width: -webkit-calc(100% - 1.875rem);
+    width: -moz-calc(100% - 1.875rem);
+    width: calc(100% - 1.875rem);
+}
+.inner {
+    &_1400 {
+        max-width: 1400px;
+    }
+    &_1300 {
+        max-width: 1300px;
+    }
+}
+
+
+.hidden  {
+    display: none;
+}
+.fixed {
+    overflow: hidden;
+}
+// common 
+
+
+//  logo
+.logo {
+    font-size: rem(40px);
+    color: $c-w;
+    transition: all 0.3s;
+
+    span {
+        font-family: 'Agraham';
+        font-size: rem(24px);
+        letter-spacing: 0;
+        color: $c-pt;
+    }
+}
+//  ====================== logo //
+
+//  header 
+#header {
+    position: fixed;
+    width: 100%; 
+    top: 0; left: 0;
+    z-index: 90;
+
+    .inner {
+        @include flexVal(flex, space-between ,center)
+    }
+}
+
+#gnb ul {
+    @include flexVal(flex, center);
+
+    li + li {
+        margin-left: rem(40px);
+    }
+    a {
+        color: $c-w;
+        font-size: rem(20px);
+        line-height: rem(100px);
+        transition: all 0.3s;
+
+    }
+}
+
+.h_black  {
+    .logo,
+    #gnb a {
+        color: $c-bk25;
+    }
+}
+// ======================== header //
+
+
+
+
+
+// footer 
+#footer {
+    padding: 1.5625rem 0 6.25rem;
+    background-color: #252525;
+    @extend %foot-txt;
+    color: $foot-color;
+    * {
+        font-family: 'Pretendard';
+    }
+    .inner {
+        text-align: center;
+        .logo {
+            opacity: 0.6;
+            margin: 0 auto .8125rem;
+        }
+        .foot_info {
+            address {
+                line-height: 1.625;
+                span + span {
+                    position: relative;
+                    padding-left: .3125rem;
+                    margin-left: .3125rem;
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: .0313rem; height: .3125rem;
+                        background:#515151 ;
+                        @include positionCustom (50%,0,0,-50%)
+                    }
+                }
+            }
+            .copy{
+                margin-top: .9375rem;
+                line-height: 1.3333;
+            }
+        }
+    }
+}
+// //footer 
+
+small {
+    &.web {
+        display: inline-block !important;
+    }
+
+    &.mo {
+        display: none !important;
+    }
+
+}
+
+
