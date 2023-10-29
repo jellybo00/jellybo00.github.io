@@ -1,6 +1,10 @@
 html {
     @extend  %basic-txt
 }
+html.fixed {
+    overflow: hidden !important;
+    touch-action: none;
+}
 
 #wrap {
     position: relative;
@@ -108,6 +112,15 @@ html {
         color: $c-bk25;
     }
 }
+#header.scroll {
+    background:rgba($color: #000, $alpha:0.7) ;
+
+    backdrop-filter: blur(8px);
+    .logo,
+    #gnb a {
+        color: $c-w;
+    }
+}
 // ======================== header //
 
 // footer 
@@ -138,3 +151,5 @@ small {
     }
 
 }
+
+

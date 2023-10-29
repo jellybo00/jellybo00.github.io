@@ -43,11 +43,12 @@
                 <nav id="gnb">
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Works</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#work">Works</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
+                <button class="ham_btn only_mo">전체메뉴</button>
             </div>
         </header>
         
@@ -57,13 +58,13 @@
                 <!-- visual_sec -->
                 <section class="visual_sec section" id="home">
                     <div class="inner_1300">
-                        <h2 class="ttl">Han Borim &nbsp;&#123; <strong>Publisher</strong> &#125;&nbsp; Portfolio</h2>
+                        <h2 class="ttl">Han Borim <em>&nbsp;&#123; <strong>Publisher</strong> &#125;&nbsp;</em> Portfolio</h2>
                     </div>
                 </section>
                 <!-- // visual_sec -->
     
                 <!-- about_sec -->
-                <section class="about_sec section">
+                <section class="about_sec section"  id="about">
                     <div class="inner_1400">
                         <div class="sec_ttl_box">
                             <h3 class="sec_ttl">about me</h3>
@@ -111,10 +112,9 @@
                                 </p>
 
 
-                                <ul class="flex col-2 "
+                                <ul class="flex col-2 mo-col-1 mo-block-100"
                                  style="--mg-x:14px; --mg-t:40px; 
-                                 --mo-mg-t: 0.961rem;
-                                --mo-mg-x: 0.3384rem;">
+                                --mo-mg-t:1.7857rem;">
                                    
                                     <li>
                                         <b class="label"><i></i>Experience</b>
@@ -181,7 +181,7 @@
                 <!-- //about_sec -->
 
                 <!-- works_sec -->
-                <section class="works_sec section">
+                <section class="works_sec section" id="work">
                     <div class="inner_1400">
                         <div class="sec_ttl_box">
                             <h3 class="sec_ttl">Works</h3>
@@ -521,8 +521,9 @@
                     </div>
                 </section>
                 <!-- //works_sec -->
-                 <!-- works_sec -->
-                 <section class="contact_sec section">
+
+                 <!-- contact_sec -->
+                 <section class="contact_sec section" id="contact">
                     <div class="inner_1400">
                         <p>
                             <strong>최적의 사용자 경험을 제공</strong>하는것이 저의 목표입니다. <br>
@@ -552,7 +553,8 @@
                         </div>
                     </div>
                 </section>
-                <!-- //works_sec -->
+                <!-- //contact_sec -->
+
                 <footer id="footer" class="section fp-auto-height ">
                     <p> 본 페이지는 상업적 목적이 아닌 <br>개인 포트폴리오용으로 제작되었습니다.</p>
                     <p class="copy"> © 2023 Han-Bo-Rim. All Rights Reserved.</p>

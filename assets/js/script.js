@@ -2,8 +2,10 @@ $(document).ready(function () {
 
     $('.ham_btn').on('click',function(){
         $('#header').toggleClass('gnb_open');
+        $('html').toggleClass('fixed');
         $('#gnb a').on('click',function(){
             $('#header').removeClass('gnb_open')
+            $('html').removeClass('fixed');
         })
     })
 
@@ -28,14 +30,14 @@ $(document).ready(function () {
                 }
                }
         },
-        responsiveWidth: 1300
+        responsiveWidth: 1500
     });
 
     $(window).scroll(function(){
-        if($(window).innerWidth() < 1300 && $(window).scrollTop() > 0){
-            $('header').addClass('h_black');
-        }else if($(window).innerWidth() < 1300 && $(window).scrollTop() <= 0){
-            $('header').removeClass('h_black');
+        if($(window).innerWidth() < 1500 && $(window).scrollTop() > 0){
+            $('header').addClass('scroll');
+        }else if($(window).innerWidth() < 1500 && $(window).scrollTop() <= 0){
+            $('header').removeClass('scroll');
         }
     }
     
@@ -45,6 +47,7 @@ $(document).ready(function () {
 
     let slideOption = {
         slidesPerView: 1,
+        autoHeight : true,
         navigation: {  
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
