@@ -18,13 +18,15 @@ $(document).ready(function () {
         slidesNavigation: true,
         afterLoad: function (anchorLink, index) {
             if($(window).innerWidth() > 768){
-                if (index % 2 == 0 && $('html').hasClass('open') != true) {
-                    $('header').addClass('h_black');;
-                } else if (index % 2 != 0 && $('html').hasClass('open') != true) {
-                    $('header').removeClass('h_black');
+                if (index == 2){
+                    $('#header').addClass('h_black')
+                } else if (index == 3){
+                    $('#header').addClass('h_black')
+                } else{
+                    $('#header').removeClass('h_black')
+                    $('#fp-nav').removeClass('nav_b')
                 }
                }
-
         },
         responsiveWidth: 1300
     });
@@ -35,13 +37,40 @@ $(document).ready(function () {
         }else if($(window).innerWidth() < 1300 && $(window).scrollTop() <= 0){
             $('header').removeClass('h_black');
         }
-    })
+    }
+    
+    )
 
 
 
+    let slideOption = {
+        slidesPerView: 1,
+        navigation: {  
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: { 
+            el: ".swiper-pagination",
+            clickable: true, 
+        },
+        observer: true,
+        observeParents: true,
+        effect : 'fade', 
+        fadeEffect: { 
+        crossFade: true 
+        },
+    };
 
+    var workList = new Swiper('.woks_slider', slideOption);
 
+    $('.works_tab button').on('click', function() {
 
+        var idx = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on');
+        $('.works_tab_cont .cont_box').removeClass('on')
+        $('.works_tab_cont .cont_box').eq(idx).addClass('on')
+  
+    });
 
 
 
@@ -49,6 +78,7 @@ $(document).ready(function () {
 
 
 })
+
 
 setScreenSize();
 window.addEventListener('resize', setScreenSize);

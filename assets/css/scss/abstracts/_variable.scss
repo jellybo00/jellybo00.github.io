@@ -64,13 +64,14 @@ $c-pt-bright:#f3f1fb;
 
 
 $html-font-size: 18px;
+
 @function stripUnit($value) {
     @return $value / ($value * 0 + 1);
 }
+
 @function rem($pxValue) {
     @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
 }
-
 
 %radius{
     border-radius: 28px;
